@@ -7,6 +7,8 @@ const Home = () => {
 		<div>
 			<h1>Home</h1>
 			<button onClick={() => navigate("/order")}>Place order</button>
+			{/* replace option will replace the history instead push the next url to history */}
+			{/* <button onClick={() => navigate("/order", { replace: true })}>Place order</button> */}
 		</div>
 	);
 };
