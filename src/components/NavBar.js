@@ -11,7 +11,14 @@ const NavBar = () => {
   };
 
   return (
-    <nav style={{ display: "flex", gap: "1rem", padding: "1rem", backgroundColor: "grey" }}>
+    <nav
+      style={{
+        display: "flex",
+        gap: "1rem",
+        padding: "1rem",
+        backgroundColor: "grey",
+        marginBottom: "1rem"
+      }}>
       <NavLink
         style={navLinkStyles}
         to="/"
@@ -21,6 +28,11 @@ const NavBar = () => {
         style={navLinkStyles}
         to="/about"
       >About
+      </NavLink>
+      <NavLink
+        style={navLinkStyles}
+        to="/products"
+      >Products
       </NavLink>
     </nav>
   );
