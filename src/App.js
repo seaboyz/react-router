@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar.js";
 import Order from "./components/Order.js";
 import NoMatch from "./components/NoMatch.js";
 import Products from "./components/Products.js";
+import FeaturedProduct from "./components/FeaturedProduct.js";
+import NewProduct from "./components/NewProduct.js";
 
 function App() {
   return (
@@ -14,7 +16,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="order" element={<Order />} />
-        <Route path="products" element={<Products />} />
+        <Route path="products" element={<Products />} >
+          <Route path="featured" element={<FeaturedProduct />} />
+          <Route path="new" element={<NewProduct />} />
+        </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
