@@ -7,6 +7,9 @@ import NoMatch from "./components/NoMatch.js";
 import Products from "./components/Products.js";
 import FeaturedProduct from "./components/FeaturedProduct.js";
 import NewProduct from "./components/NewProduct.js";
+import Users from "./components/Users.js";
+import UserDetails from "./components/UserDetails.js";
+import Admin from "./components/Admin.js";
 
 function App() {
   return (
@@ -16,6 +19,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="order" element={<Order />} />
+        <Route path="users" element={<Users />} >
+          <Route path="admin" element={<Admin />} />
+          <Route path=":userId" element={<UserDetails />} />
+        </Route>
         <Route path="products" element={<Products />} >
           {/* use the index route to render the default nested route */}
           <Route index element={<FeaturedProduct />} />
