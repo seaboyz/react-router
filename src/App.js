@@ -17,6 +17,8 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="order" element={<Order />} />
         <Route path="products" element={<Products />} >
+          {/* use the index route to render the default nested route */}
+          <Route index element={<FeaturedProduct />} />
           <Route path="featured" element={<FeaturedProduct />} />
           <Route path="new" element={<NewProduct />} />
         </Route>
