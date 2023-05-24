@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useSearchParams } from "react-router-dom";
 
 const Users = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const showActiveUsers = searchParams.get("filter") === "active";
+
   return (
     <>
       <ul style={{
@@ -13,6 +16,21 @@ const Users = () => {
         <Link to="3">user 3</Link>
         <Link to="/users/admin">Admin</Link>
       </ul>
+      <button onClick={() => {
+        setSearchParams({ filter: "active" });
+      }}>
+        Active Users
+      </button>
+      <button onClick={() => {
+        setSearchParams({});
+      }}>
+        Reset filter
+      </button>
+      {showActiveUsers ? (
+        <h2>Showing active users</h2>
+      ) : (
+        <h2>Showing all users</h2>
+      )}
       <Outlet />
     </>
   );
